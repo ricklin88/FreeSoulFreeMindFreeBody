@@ -6,6 +6,16 @@
   font-size: 16px;
 }
 
+:root {
+  --maincolor: #2F4EA2;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  background-color: blue;
+}
+
 * {
   border: 1px solid red
 }
@@ -47,3 +57,6 @@ li {
   padding: 0 2rem;
 }
 
+#header2 {
+  background-color: var(--maincolor);
+}
