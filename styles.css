@@ -47,3 +47,17 @@ li {
   padding: 0 2rem;
 }
 
+.frontimg-container {
+  position: relative;
+}
+
+.frontimgtitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+img { 
+  width: 50%; 
+  object-fit: contain;
+}
