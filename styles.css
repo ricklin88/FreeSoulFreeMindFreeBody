@@ -83,7 +83,14 @@ background-color: #000;
 
   display: flex;
   flex-direction: column; 
-  padding: 24px; 
+  padding: 24px;
+
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+}
+
+.quote-drawer.open {
+  transform: translateX(0);
 }
 
 .quote-drawer-header {
