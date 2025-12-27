@@ -64,6 +64,24 @@ background-color: #000;
   text-orientation: mixed;
 }
 
+.quote-overlay {
+  position: fixed;
+  inset: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+
+  z-index: 1050;
+}
+
+.quote-overlay.open {
+  opacity: 1;
+  pointer-events: auto; 
+}
+
 .quote-drawer {
   position: fixed;
   top: 0;
@@ -76,8 +94,6 @@ background-color: #000;
   color:#222;
 
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.25);
-
-  
 
   z-index: 1100;
 
@@ -131,6 +147,7 @@ background-color: #000;
   font-size: 14px;
 }
 
+
 a:hover {
   cursor: pointer;
   COLOR: blue;
@@ -139,6 +156,7 @@ a:hover {
 body {
   position: relative;
 }
+
 #header {
   display: flex;
   justify-content: space-between;

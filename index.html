@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreeSoul</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
 </head>
 <body>
     
-    <aside class="quote-drawer">
+    <div class="quote-tab" id="quoteTab">
+        <span class="quote-arrow">→</span>
+        <span class="quote-text">REQUEST A QUOTE</span>
+    </div>
+    
+   <div class="quote-overlay" id="quoteOverlay"></div>   
+    <aside class="quote-drawer" id="quoteDrawer">
         <div class="quote-drawer-header">
             <h2>Request a Quote</h2>
-            <button class="quote-close">x</button>
+            <button class="quote-close" id="quoteClose">x</button>
         </div>
 
         <p class="quote-audience">
@@ -49,10 +56,6 @@
         
     </aside>
 
-    <div class="quote-tab">
-        <span class="quote-arrow">→</span>
-        <span class="quote-text">REQUEST A QUOTE</span>
-    </div>
 
     <div id="header">
         <h1>FreeSoulHomeRenovation</h1>
