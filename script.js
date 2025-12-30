@@ -1,3 +1,30 @@
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".nav-menu");
+
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+
+/* FADE-IN ON SCROLL */
+const faders = document.querySelectorAll(".fade-in");
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.2
+  }
+);
+
+faders.forEach(el => observer.observe(el));
+
+
 const quoteTab = document.getElementById('quoteTab');
 const quoteDrawer = document.getElementById('quoteDrawer');
 const quoteClose = document.getElementById('quoteClose');
@@ -47,3 +74,22 @@ document.addEventListener('keydown', (e) => {
         closeDrawer();
     }});
 
+quoteDrawer.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+
+    const focusable = getFocusableElements(quoteDrawer);
+    if (focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+    }
+
+    if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+    }
+});
